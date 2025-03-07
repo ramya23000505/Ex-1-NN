@@ -1,7 +1,7 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>ENTER RAMYA R </H3>
+<H3>ENTER 212223230169 </H3>
 <H3>EX. NO.1</H3>
-<H3>DATE</H3>
+<H3>07-03-2025</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -37,14 +37,126 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+### Import Libraries
+```py
 
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+```
 
+### Read the dataset 
+
+```py
+df=pd.read_csv("Churn_Modelling.csv")
+df
+```
+### Checking Data
+```py
+df.head()
+df.tail()
+df.columns
+```
+
+### Check the missing data
+```py
+df.isnull().sum()
+```
+
+### Check for Duplicates
+```py
+df.duplicated()
+```
+
+### Assigning Y
+```py
+y = df.iloc[:, -1].values
+print(y)
+```
+
+### Check for duplicates
+```py
+df.duplicated()
+```
+
+### Check for outliers
+```py
+df.describe()
+```
+
+### Dropping string values data from dataset
+```py
+data = df.drop(['Surname', 'Geography','Gender'], axis=1)
+```
+### Checking datasets after dropping string values data from dataset
+```py
+data.head()
+```
+
+### Normalize the dataset
+```py
+scaler=MinMaxScaler()
+df1=pd.DataFrame(scaler.fit_transform(data))
+print(df1)
+```
+
+### Split the dataset
+```py
+X=df.iloc[:,:-1].values
+y=df.iloc[:,-1].values
+print(X)
+print(y)
+```
+
+### Training and testing model
+```py
+X_train ,X_test ,y_train,y_test=train_test_split(X,y,test_size=0.2)
+print("X_train\n")
+print(X_train)
+print("\nLenght of X_train ",len(X_train))
+print("\nX_test\n")
+print(X_test)
+print("\nLenght of X_test ",len(X_test))
+```
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+### Data
+![image](https://github.com/user-attachments/assets/60b6c086-7026-4845-9216-9773d6771b00)
 
+### Data checking
+
+![image](https://github.com/user-attachments/assets/a2f25808-8f26-4510-983a-c3276112828a)
+
+### Missing Data 
+
+![image](https://github.com/user-attachments/assets/63ea43cf-e33e-437b-ade8-0b5e4852fae4)
+
+### Duplicates identification
+
+![image](https://github.com/user-attachments/assets/8c5afc6b-1974-457c-ab87-d4dd46605d6a)
+
+### Values of 'X'
+![image](https://github.com/user-attachments/assets/ee6c66d2-dddd-482d-a1f2-9602f2176a2f)
+
+### Values of 'Y'
+![image](https://github.com/user-attachments/assets/32200314-e602-4510-8ed5-aebd6bc5b650)
+
+### Outliers
+![image](https://github.com/user-attachments/assets/a46ebd34-4d14-4d62-9aa6-0b68075fe623)
+
+### Checking datasets after dropping string values data from dataset
+![image](https://github.com/user-attachments/assets/f2e3d539-3ef6-4abd-8ce5-156f591651bf)
+
+### Normalize the dataset
+![image](https://github.com/user-attachments/assets/db169abd-75e1-4792-ac03-3ab7f9e4114e)
+
+### Split the dataset
+![image](https://github.com/user-attachments/assets/3d20c258-1ff8-4d64-b2bf-df22a8d165e6)
+
+### Training and testing model
+![Uploading image.png…]()
 
 ## RESULT:
-Thus, Implementation of Data Preprocessing is done in python  using a data set downloaded from Kaggle.
 
-
+### Thus, Implementation of Data Preprocessing is done in python  using a data set downloaded from Kaggle.
