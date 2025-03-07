@@ -155,7 +155,8 @@ print("\nLenght of X_test ",len(X_test))
 ![image](https://github.com/user-attachments/assets/3d20c258-1ff8-4d64-b2bf-df22a8d165e6)
 
 ### Training and testing model
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/07d876a2-c89d-475f-9cdb-fd38c7f43db2)
+
 
 ## RESULT:
 
